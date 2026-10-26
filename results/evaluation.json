@@ -1,0 +1,120 @@
+{
+  "audit": {
+    "training_rows": 48000,
+    "prediction_rows": 12000,
+    "december_rows": 31,
+    "training_date_range": [
+      "2025-01-01",
+      "2025-10-31"
+    ],
+    "prediction_date_range": [
+      "2025-11-01",
+      "2025-12-31"
+    ],
+    "train_months": {
+      "2025-01": 4918,
+      "2025-02": 4337,
+      "2025-03": 5036,
+      "2025-04": 4819,
+      "2025-05": 4913,
+      "2025-06": 4783,
+      "2025-07": 4912,
+      "2025-08": 4759,
+      "2025-09": 4670,
+      "2025-10": 4853
+    },
+    "missing_weight_train": 300,
+    "missing_weight_validation": 165,
+    "nonpositive_weight_train": 292,
+    "nonpositive_weight_validation": 145,
+    "missing_market_index_train": 374,
+    "missing_market_index_validation": 249,
+    "unseen_cities": [
+      "Allentown",
+      "Charlotte",
+      "Chicago",
+      "Jackson",
+      "Knoxville",
+      "Laredo",
+      "Norfolk",
+      "San Diego"
+    ],
+    "min_training_rate": 57.22,
+    "max_training_rate": 25533.0,
+    "training_rate_over_10000": 103,
+    "selection_training_rows": 38477,
+    "september_validation_rows": 4670,
+    "october_holdout_rows": 4853
+  },
+  "evaluation": {
+    "model_selection_metric": "September MAE in USD",
+    "candidates": {
+      "reduced_raw": {
+        "trees": 91,
+        "mae": 134.7924434555886,
+        "rmse": 617.6541627691735,
+        "r2": 0.8355976705387476,
+        "wape_percent": 5.601475196121341
+      },
+      "reduced_log": {
+        "trees": 117,
+        "mae": 117.84333182525062,
+        "rmse": 618.7697158086302,
+        "r2": 0.8350032759746354,
+        "wape_percent": 4.8971328312252655
+      },
+      "full_raw": {
+        "trees": 217,
+        "mae": 142.45523308592618,
+        "rmse": 624.9852499777625,
+        "r2": 0.8316718473933249,
+        "wape_percent": 5.919912379594271
+      },
+      "full_log": {
+        "trees": 237,
+        "mae": 128.13929698911002,
+        "rmse": 624.0846272678931,
+        "r2": 0.8321566297997581,
+        "wape_percent": 5.324995046695006
+      }
+    },
+    "selected_model": "reduced_log",
+    "october_holdout": {
+      "mae": 115.6550323681505,
+      "rmse": 650.5353746969864,
+      "r2": 0.8188748214582305,
+      "wape_percent": 4.861392806069613
+    },
+    "october_baseline": {
+      "mae": 253.84794914953068,
+      "rmse": 695.0468801668737,
+      "r2": 0.7932406357697894,
+      "wape_percent": 10.670133141313197
+    },
+    "baseline_dollars_per_mile": 2.142844129554656,
+    "december_model": "same final reduced-feature model",
+    "feature_importance_gain": {
+      "distance": 193073.47283145785,
+      "log_distance": 34028.956892967224,
+      "equipment": 1283.4767146408558,
+      "delivery": 556.7236766815186,
+      "pickup": 543.5315557420254,
+      "weight": 401.6709258854389,
+      "annual_cos": 217.02858328819275,
+      "elapsed_days": 210.88826683163643,
+      "day_of_month": 18.2242691218853,
+      "weight_per_mile": 15.374375015497208,
+      "weekday_sin": 13.59177714586258,
+      "month": 13.19370812177658,
+      "weekday_cos": 12.408784031867981,
+      "week_of_year": 12.297721117734909,
+      "day_of_year": 8.947675079107285,
+      "annual_sin": 6.526882112026215,
+      "weekday": 3.837906986474991
+    },
+    "validation_prediction_min": 222.25342277460024,
+    "validation_prediction_max": 6225.949916315861,
+    "december_prediction_min": 825.3047554585193,
+    "december_prediction_max": 844.6799590413003
+  }
+}
